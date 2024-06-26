@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^6.0.0",
-    "@ugent-ui/css-reset": "file:../../css-reset",
-    "@ugent-ui/design-tokens": "file:../../design-tokens",
+    "@ugent-ui/css-reset": "latest",
+    "@ugent-ui/design-tokens": "latest",
     "bootstrap": "^5.3.3",
     "lit": "^3.1.2"
   },
