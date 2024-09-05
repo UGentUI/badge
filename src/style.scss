@@ -18,8 +18,8 @@ $input-btn-padding-x: map-get(core-map.$core, "space-150");
 
   // Set the global Bootstrap CSS variables that are not available within the
   // shadow DOM's scope here
-  --bs-border-width: #{token("border-width-small", core-map.$core)};
-  --bs-border-radius: #{map-get(core-map.$core, "border-radius")};
+  --bs-border-width: #{map-get(core-map.$core, "border-width-small")};
+  --bs-border-radius: #{map-get(core-map.$core, "border-radius-small")};
 
   // Override bootstrap classes vars
   .btn-primary {
