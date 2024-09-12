@@ -17,20 +17,6 @@
     // shadow DOM's scope here
     --bs-border-width: #{map-get(core-map.$core, "border-width-small")};
     --bs-border-radius: #{map-get(core-map.$core, "border-radius-small")};
-    // Override bootstrap classes vars
-    .btn-primary {
-        --bs-btn-bg: #{token("color-text-brand", light-theme-map.$light)};
-    }
-    // Webcomponent customisations
-    .my-element {
-        padding: map-get(core-map.$core, "space-200");
-        border: token("border-width-small", core-map.$core) solid token("color-border-default", light-theme-map.$light);
-        border-radius: map-get(core-map.$core, "border-radius");
-    }
-
-    .slotted-content {
-        padding-bottom: map-get(core-map.$core, "space-100");
-    }
 
     .badge {
         //This should be changed once the colors are available

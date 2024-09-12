@@ -7,33 +7,23 @@
     <link rel="stylesheet"
           href="node_modules/@ugent-ui/css-reset/dist/reset.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-    <script type="module" src="/src/my-element.ts"></script>
     <script type="module" src="/src/ug-badge.ts"></script>
     <style>
         section {
             padding: var(--space-200, 16px);
         }
-
-        my-element {
-            width: 50%;
-        }
     </style>
 </head>
   <body>
-    <section>
-      <my-element title="Hello!">
-        <p>
-          This is a Lit web component with a property, slotted content and a
-          CustomEvent. It uses Bootstrap for styling and integrates with the
-          UGent UI Design System.
-        </p>
-      </my-element>
-      <script>
-        const myElement = document.querySelector("my-element");
-        myElement.addEventListener("button-click", (e) => {
-          alert(e.detail.message);
-        });
-      </script>
-    </section>
+      <section>
+          <ug-badge bg="primary" text="My Text">My Primary Badge</ug-badge>
+          <ug-badge bg="secondary">My Secondary Badge</ug-badge>
+          <ug-badge bg="success">My Success Badge</ug-badge>
+          <ug-badge bg="danger">My Danger Badge</ug-badge>
+          <ug-badge bg="warning">My Warning Badge</ug-badge>
+          <ug-badge bg="info">My Info Badge</ug-badge>
+          <ug-badge bg="light">My Light Badge</ug-badge>
+          <ug-badge bg="dark">My Dark Badge</ug-badge>
+      </section>
   </body>
 </html>
