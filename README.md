@@ -1,17 +1,89 @@
-# Webcomponents Quick Start
+# UG Badge
 
-The Webcomponents Quick Start project is designed to streamline the creation of web components within the UGent UI Design System. By using this template, developers can focus on building feature-rich and consistent UI components, ensuring that they integrate seamlessly with UGent's design language.
+Een Badge Web Component voor UGent webapplicaties voor het aanduiden van status of andere contextuele informatie.
 
 ## Introduction
 
-This project provides a development environment with minimal configuration and modern development tools. It leverages [Vite]("https://vitejs.dev/") for fast development and building, [LIT](https://lit.dev/) and TypeScript for creating web components, SCSS for styling, and PostCSS for processing and optimizing CSS.
+Deze webcomponent zal dienen om status of contextuele informatie te tonen binnen een groter webproject. De badge moet gestyled zijn conform de standaard Bootstrap-styling, specifiek de badge componenten zoals beschreven op: Bootstrap Badge.
 
-## Features
+## Demo
 
-- A LIT web component example with a property, slotted content, and a CustomEvent.
-- [Bootstrap](https://getbootstrap.com/) for consistent styling
-- UGent UI Design System Integration
-- [PurgeCSS](https://purgecss.com/) integration to remove unused Bootstrap CSS resulting in a smaller component files sizes
+https://ugentui.github.io/ug-badge
+
+## Installatie
+
+```bash
+npm add @ugent-ui/ug-badge
+```
+
+> [!NOTE]
+> Zorg steeds dat de [UGent UI CSS Reset](https://www.npmjs.com/package/@ugent-ui/css-reset?activeTab=readme) de eerste stylesheet op je pagina is om te zorgen voor een consistente styling. Voeg het `data-color-mode` attribute toe aan de HTML tag voor `light` and `dark` mode ondersteuning. Instaleer indien nodig:
+
+```bash
+npm add @ugent-ui/css-reset
+```
+
+## Gebruik
+Je kan de badge gebruiken op verschillende manieren:
+      <ug-badge bg="primary">Primary</ug-badge>
+      <ug-badge bg="secondary">secondary</ug-badge>
+      <ug-badge bg="success">Success</ug-badge>
+      <ug-badge bg="danger">Danger</ug-badge>
+      <ug-badge bg="warning">warning</ug-badge>
+      <ug-badge bg="info">info</ug-badge>
+      <ug-badge bg="light">light</ug-badge>
+      <ug-badge bg="dark">dark</ug-badge>
+of:
+      <ug-badge bg="primary" text="Primary"></ug-badge>
+Indien je beiden gebruikt zie je eerst de tekst tussen de tags gevolgd door de text property.
+
+## Component tag
+
+Gebruik de volgende tag om de component in je HTML op te nemen:
+
+```html
+<ug-badge></ug-badge>
+```
+
+## Component properties
+
+- `bg`: `string` - Bepaalt de achtergrondkleur. Deze eigenschap moet gekoppeld zijn aan de Bootstrap-stijlen voor badges. De mogelijke waarden van de bg property zijn:
+       - primary
+       - secondary
+       - success
+       - danger
+       - warning
+       - info
+       - light
+       - dark
+- `text`: `string` - De tekst van de badge.
+- `placeholder`: `string` - De placeholder tekst van de badge.
+Indien zowel text als placeholder gebruikt worden zie je eerst de placeholder value gevolgd door de text value
+
+###bg
+
+## Functionaliteit:
+###Component Tag:
+    De tag voor deze component moet <ug-badge></ug-badge> zijn.
+###Text slot:
+	De badge moet minimaal één slot bevatten waarin tekst geplaatst kan worden. Dit slot bepaalt de inhoud van de badge.
+###Background property (bg):
+    De badge moet een attribute bg hebben, die de achtergrondkleur bepaalt. Deze eigenschap moet gekoppeld zijn aan de Bootstrap-stijlen voor badges. De mogelijke waarden van de bg property zijn:
+        primary
+        secondary
+        success
+        danger
+        warning
+        info
+        light
+        dark
+###Voorbeeld gebruik:
+    Een voorbeeld van hoe de component eruit moet zien in de HTML:
+    <ug-badge bg="primary">Primary</ug-badge>
+    <ug-badge bg="success">Success</ug-badge>
+    <ug-badge bg="danger">Danger</ug-badge>
+
+<!-- De volgende documentatie komt uit Webcomponents-Quick-Start, maar kan nog steeds handig zijn indien er verdergewerkt wordt aan dit project -->
 
 ## Requirements
 
@@ -53,26 +125,6 @@ Follow these steps to set up your development environment:
    ```
 
    The index.html will be served on http://localhost:5173, the entry point to this application.
-
-## Development
-
-Develop your components in the `src` directory. Any changes you make will automatically reload the browser.
-
-Refer to `src/my-element.ts` as a starting point for your components logic and `src/style.scss` for styling and ensure you follow the UGent UI Design System guidelines.
-
-Preview your component by adding it to the `index.html`
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head
-    <script type="module" src="/src/my-element.ts"></script>
-  </head>
-  <body>
-    <my-element></my-element>
-  </body>
-</html>
-```
 
 **Recources**:
 

@@ -6,34 +6,42 @@
 
 // Override Bootstrap
 // https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
-$primary: map-get(light-theme-map.$light, "color-text-brand");
-$input-btn-padding-y: map-get(core-map.$core, "space-100");
-$input-btn-padding-x: map-get(core-map.$core, "space-150");
 
 // Import Bootstap
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/helpers/color-bg";
 
 :host {
-  display: block; /* Ensure it has a layout */
+    display: block; /* Ensure it has a layout */
+    // Set the global Bootstrap CSS variables that are not available within the
+    // shadow DOM's scope here
+    --bs-border-width: #{map-get(core-map.$core, "border-width-small")};
+    --bs-border-radius: #{map-get(core-map.$core, "border-radius-small")};
+    // Override bootstrap classes vars
+    .btn-primary {
+        --bs-btn-bg: #{token("color-text-brand", light-theme-map.$light)};
+    }
+    // Webcomponent customisations
+    .my-element {
+        padding: map-get(core-map.$core, "space-200");
+        border: token("border-width-small", core-map.$core) solid token("color-border-default", light-theme-map.$light);
+        border-radius: map-get(core-map.$core, "border-radius");
+    }
 
-  // Set the global Bootstrap CSS variables that are not available within the
-  // shadow DOM's scope here
-  --bs-border-width: #{map-get(core-map.$core, "border-width-small")};
-  --bs-border-radius: #{map-get(core-map.$core, "border-radius-small")};
+    .slotted-content {
+        padding-bottom: map-get(core-map.$core, "space-100");
+    }
 
-  // Override bootstrap classes vars
-  .btn-primary {
-    --bs-btn-bg: #{token("color-text-brand", light-theme-map.$light)};
-  }
-
-  // Webcomponent customisations
-  .my-element {
-    padding: map-get(core-map.$core, "space-200");
-    border: token("border-width-small", core-map.$core) solid
-      token("color-border-default", light-theme-map.$light);
-    border-radius: map-get(core-map.$core, "border-radius");
-  }
-  .slotted-content {
-    padding-bottom: map-get(core-map.$core, "space-100");
-  }
+    .badge {
+        //This should be changed once the colors are available
+        //--bs-primary-rgb: #{token("color-background-brand-default-rgb", light-theme-map.$light)};
+        //--bs-secondary-rgb: #{token("color-background-information-default-rgb", light-theme-map.$light)};
+        //--bs-success-rgb: #{token("color-background-success-default-rgb", light-theme-map.$light)};
+        //--bs-danger-rgb: #{token("color-background-danger-default-rgb", light-theme-map.$light)};
+        //--bs-warning-rgb: #{token("color-background-warning-default-rgb", light-theme-map.$light)};
+        //--bs-info-rgb: #{token("color-background-information-default-rgb", light-theme-map.$light)};
+        //--bs-light-rgb: #{token("color-background-light-default-rgb", light-theme-map.$light)};
+        //--bs-dark-rgb: #{token("color-background-dark-default-rgb", light-theme-map.$light)};
+        --bs-bg-opacity: 0.5;
+    }
 }

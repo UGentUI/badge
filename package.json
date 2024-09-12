@@ -1,7 +1,13 @@
 {
-  "name": "quick-start",
+  "name": "@ugent-ui/ug-badge",
+  "version": "1.0.0-beta.1",
+  "description": "Een Badge Web Component voor UGent webapplicaties voor het aanduiden van status of andere contextuele informatie.",
+  : null,
+  "main": "dist/assets/ug-badge.js",
+  "files": [
+    "dist/assets/ug-badge.js"
+  ],
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

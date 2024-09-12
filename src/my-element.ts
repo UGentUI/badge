@@ -14,6 +14,16 @@ export class MyElement extends LitElement {
       <div class="slotted-content">
         <slot></slot>
       </div>
+      <ug-badge text="HIHI">Tralala</ug-badge> 
+      <ug-badge bg="primary" text="My Text">Primary</ug-badge>
+      <ug-badge bg="secondary">secondary</ug-badge>
+      <ug-badge bg="success">Success</ug-badge>
+      <ug-badge bg="danger">Danger</ug-badge>
+      <ug-badge bg="warning">warning</ug-badge>
+      <ug-badge bg="info">info</ug-badge>
+      <ug-badge bg="light">light</ug-badge>
+      <ug-badge bg="dark">dark</ug-badge>
+
       <button class="btn btn-primary" @click=${this._handleClick}>
         Click me
       </button>
