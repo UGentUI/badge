@@ -1,33 +1,26 @@
 // Design Tokens
+@use "@ugent-ui/design-tokens/build/scss/_colors-map" as colors-map;
 @use "@ugent-ui/design-tokens/build/scss/_light-theme-map" as light-theme-map;
 @use "@ugent-ui/design-tokens/build/scss/_dark-theme-map" as dark-theme-map;
 @use "@ugent-ui/design-tokens/build/scss/_core-map" as core-map;
 @import "@ugent-ui/design-tokens/src/utils/scss/helpers";
 
-// Override Bootstrap
-// https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
-
-// Import Bootstap
+// Import Bootstrap
 @import "bootstrap/scss/bootstrap";
-@import "bootstrap/scss/helpers/color-bg";
 
 :host {
-    display: block; /* Ensure it has a layout */
-    // Set the global Bootstrap CSS variables that are not available within the
-    // shadow DOM's scope here
-    --bs-border-width: #{map-get(core-map.$core, "border-width-small")};
-    --bs-border-radius: #{map-get(core-map.$core, "border-radius-small")};
+  display: inline-block; /* Ensure it has a layout */
 
-    .badge {
-        //This should be changed once the colors are available
-        //--bs-primary-rgb: #{token("color-background-brand-default-rgb", light-theme-map.$light)};
-        //--bs-secondary-rgb: #{token("color-background-information-default-rgb", light-theme-map.$light)};
-        //--bs-success-rgb: #{token("color-background-success-default-rgb", light-theme-map.$light)};
-        //--bs-danger-rgb: #{token("color-background-danger-default-rgb", light-theme-map.$light)};
-        //--bs-warning-rgb: #{token("color-background-warning-default-rgb", light-theme-map.$light)};
-        //--bs-info-rgb: #{token("color-background-information-default-rgb", light-theme-map.$light)};
-        //--bs-light-rgb: #{token("color-background-light-default-rgb", light-theme-map.$light)};
-        //--bs-dark-rgb: #{token("color-background-dark-default-rgb", light-theme-map.$light)};
-        --bs-bg-opacity: 0.5;
-    }
+  // Set the global Bootstrap CSS variables that are not available within the
+  // shadow DOM's scope here
+  --bs-primary-rgb: var(--color-background-primary-rgb, 13, 110, 253);
+  --bs-secondary-rgb: var(--color-background-secondary-rgb, 108, 117, 125);
+  --bs-success-rgb: var(--color-background-success-rgb, 25, 135, 84);
+  --bs-info-rgb: var(--color-background-info-rgb, 13, 202, 240);
+  --bs-warning-rgb: var(--color-background-warning-rgb, 255, 193, 7);
+  --bs-danger-rgb: var(--color-background-danger-rgb, 220, 53, 69);
+  --bs-light-rgb: var(--color-background-light-rgb, 248, 249, 250);
+  --bs-dark-rgb: var(--color-background-dark-rgb, 33, 37, 41);
+  --bs-bg-opacity: 1;
+  --bs-border-radius: #{map-get(core-map.$core, "border-radius-small")};
 }
