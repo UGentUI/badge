@@ -33,9 +33,6 @@ Je kan de badge gebruiken op verschillende manieren:
       <ug-badge bg="info">info</ug-badge>
       <ug-badge bg="light">light</ug-badge>
       <ug-badge bg="dark">dark</ug-badge>
-of:
-      <ug-badge bg="primary" text="Primary"></ug-badge>
-Indien je beiden gebruikt zie je eerst de tekst tussen de tags gevolgd door de text property.
 
 ## Component tag
 
@@ -56,9 +53,7 @@ Gebruik de volgende tag om de component in je HTML op te nemen:
        - info
        - light
        - dark
-- `text`: `string` - De tekst van de badge.
 - `placeholder`: `string` - De placeholder tekst van de badge.
-Indien zowel text als placeholder gebruikt worden zie je eerst de placeholder value gevolgd door de text value
 
 ###bg
 
@@ -66,7 +61,7 @@ Indien zowel text als placeholder gebruikt worden zie je eerst de placeholder va
 ###Component Tag:
     De tag voor deze component moet <ug-badge></ug-badge> zijn.
 ###Text slot:
-	De badge moet minimaal één slot bevatten waarin tekst geplaatst kan worden. Dit slot bepaalt de inhoud van de badge.
+	De badge moet minimaal Ã©Ã©n slot bevatten waarin tekst geplaatst kan worden. Dit slot bepaalt de inhoud van de badge.
 ###Background property (bg):
     De badge moet een attribute bg hebben, die de achtergrondkleur bepaalt. Deze eigenschap moet gekoppeld zijn aan de Bootstrap-stijlen voor badges. De mogelijke waarden van de bg property zijn:
         primary
